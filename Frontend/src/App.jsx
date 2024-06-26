@@ -7,7 +7,7 @@ function App() {
 
   // get request to fetch songs from the backend
   useEffect(() => {
-    axios.get('/api/songs')
+    axios.get('/song')
       .then((res) => {
         console.log(res.data);
         // Ensure the response data is an array
