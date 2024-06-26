@@ -4,7 +4,7 @@ import cors from 'cors';
 const app = express();
 
 // Define your whitelist
-const whitelist = ['http://localhost:3000', 'https://hindisong-frontend.onrender.com'];
+const whitelist = ['http://localhost:5173', 'https://hindisong-frontend.onrender.com'];
 
 // CORS options
 const corsOptions = {

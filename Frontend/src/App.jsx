@@ -5,7 +5,7 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('https://hindisong-backend.onrender.com/')
+    fetch('https://hindisong-backend.onrender.com')
       .then((response) => {
         console.log('Response:', response);
         if (!response.ok) {
