@@ -8,7 +8,7 @@ In the Backend folder, initialize npm and set up your project:
 
 1. Initialize npm:
    ```bash
-   npm init -y
+   npm init
    ```
 
 2. Install Express:
@@ -16,7 +16,7 @@ In the Backend folder, initialize npm and set up your project:
    npm install express
    ```
 
-3. Create a `server.js` file and set up your Express server:
+3. Create a `server.js` file and set up your Express server:  [server.js](https://github.com/BuddhadebKoner/Backend-Frontend-Connection/blob/main/Backend/server.js)
 
    ```javascript
    import express from 'express';
@@ -60,7 +60,7 @@ In the Backend folder, initialize npm and set up your project:
    });
    ```
 
-4. Update your `package.json` to include a start script:
+4. Update your `package.json` to include a start script: [package.json](https://github.com/BuddhadebKoner/Backend-Frontend-Connection/blob/main/Backend/package.json)
    ```json
    "scripts": {
        "start": "node server.js"
@@ -103,7 +103,7 @@ Now your server is ready to send data to the frontend!
    npm run dev
    ```
 
-2. In `App.js`, import necessary modules:
+2. In `App.js`, import necessary modules: [App.js](https://github.com/BuddhadebKoner/Backend-Frontend-Connection/blob/main/Frontend/src/App.jsx)
    ```javascript
    import React, { useEffect, useState } from 'react';
    import './App.css';
@@ -133,7 +133,7 @@ Now your server is ready to send data to the frontend!
    }, []);
    ```
 
-5. Configure proxy in `vite.config.js`:
+5. Configure proxy in : [vite.config.js](https://github.com/BuddhadebKoner/Backend-Frontend-Connection/blob/main/Frontend/vite.config.js)
    ```javascript
    server: {
      proxy: {
