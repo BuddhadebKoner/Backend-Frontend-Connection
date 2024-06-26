@@ -4,8 +4,10 @@ function App() {
   const [songs, setSongs] = useState([]);
   const [error, setError] = useState('');
 
+    const api = import.meta.env.VITE_HINDI_SONG_API
+
   useEffect(() => {
-    fetch('https://hindisong-backend.onrender.com')
+    fetch(api)
       .then((response) => {
         console.log('Response:', response);
         if (!response.ok) {

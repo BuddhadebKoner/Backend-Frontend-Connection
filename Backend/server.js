@@ -1,10 +1,15 @@
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 const app = express();
 
+dotenv.config();
+
+const whitelistWebs = process.env.WHITE_LIST_WEB
+
 // Define your whitelist
-const whitelist = ['http://localhost:5173', 'https://hindisong-frontend.onrender.com'];
+const whitelist = ['http://localhost:5173', whitelistWebs];
 
 // CORS options
 const corsOptions = {
