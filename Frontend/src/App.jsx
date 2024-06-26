@@ -5,12 +5,10 @@ function App() {
   const [songs, setSongs] = useState([]);
   const [error, setError] = useState('');
 
-  // get request to fetch songs from the backend
   useEffect(() => {
-    axios.get('https://hindisong-backend.onrender.com/api/songs')
+    axios.get('/api')
       .then((res) => {
         console.log(res.data);
-        // Ensure the response data is an array
         if (Array.isArray(res.data)) {
           setSongs(res.data);
         } else {
@@ -19,7 +17,7 @@ function App() {
         }
       })
       .catch((err) => {
-        console.log('Error fetching songs:', err);
+        console.error('Error fetching songs:', err);
         setError('Error fetching songs');
       });
   }, []);
@@ -32,7 +30,7 @@ function App() {
           <p>{error}</p>
         ) : (
           songs.map((song, index) => (
-            <a key={song.id} href={song.link} target='_blank' rel='noopener noreferrer'>
+            <a key={song.id} href={song.link} target="_blank" rel="noopener noreferrer">
               <div className="song-card">
                 <h3>{index + 1}. {song.title}</h3>
                 <p>Movie: {song.content}</p>
