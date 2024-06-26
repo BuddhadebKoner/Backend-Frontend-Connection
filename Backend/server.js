@@ -7,7 +7,7 @@ const app = express();
 // });
 
 // get a list of 5 Hindi songs
-app.get('/api/songs', (req, res) => {
+app.get('/', (req, res) => {
     const Songs = [
         {
             "id": 1,
