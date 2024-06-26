@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 function App() {
   const [songs, setSongs] = useState([]);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('/api')
-      .then((res) => {
-        console.log(res.data);
-        if (Array.isArray(res.data)) {
-          setSongs(res.data);
+    fetch('https://hindisong-backend.onrender.com/')
+      .then((response) => {
+        console.log('Response:', response);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Data:', data);
+        if (Array.isArray(data)) {
+          setSongs(data);
         } else {
-          console.error('Data is not an array:', res.data);
+          console.error('Data is not an array:', data);
           setError('Data is not in the expected format');
         }
       })
