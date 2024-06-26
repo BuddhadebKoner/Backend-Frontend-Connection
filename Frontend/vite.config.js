@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/': {
+      '/api': {
         target: 'https://hindisong-backend.onrender.com/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),

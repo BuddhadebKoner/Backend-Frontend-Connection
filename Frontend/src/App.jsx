@@ -6,14 +6,14 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('/')
+    axios.get('/api')
       .then((res) => {
         console.log(res.data);
         if (Array.isArray(res.data)) {
           setSongs(res.data);
         } else {
           console.error('Data is not an array:', res.data);
-          setError('Data Is not in the Expected Format');
+          setError('Data is not in the expected format');
         }
       })
       .catch((err) => {
