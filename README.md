@@ -2,6 +2,9 @@
 
 This repository demonstrates a simple yet powerful connection between a backend server built with Express and a frontend interface created with React. The backend serves a collection of songs in JSON format, which the frontend fetches and displays.
 
+Api link : link : [Api data](https://hindisong-backend.onrender.com/)
+Web LInk : [hindi songs](https://hindisong-frontend.onrender.com/)
+
 ## Backend
 
 In the Backend folder, initialize npm and set up your project:
