@@ -16,11 +16,16 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: #2b2d42;
+}
+
+.Hero-Heading{
+  color: white;
 }
 
 .app {
   font-family: "Open Sans", sans-serif;
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 h1 {
@@ -36,12 +41,13 @@ h1 {
 }
 
 .song-card {
+  width: 250px;
+  height: 250px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 250px;
   transition: transform 0.3s;
 }
 
@@ -51,7 +57,6 @@ h1 {
 
 .song-card h3 {
   margin: 0 0 10px;
-  font-size: 18px;
   color: #333;
 }
 

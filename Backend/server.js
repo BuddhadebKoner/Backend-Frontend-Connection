@@ -108,6 +108,15 @@ app.get('/', (req, res) => {
       "duration": "4:29",
       "releaseYear": 2016,
       "link": "https://www.youtube.com/watch?v=6FURuLYrR_Q",
+    },
+    {
+      "id": 10,
+      "title": "Jai Ho ",
+      "content": "Slumdog Millionaire",
+      "artist": "A R Rahman",
+      "duration": "3:00",
+      "releaseYear": 2008,
+      "link": "https://youtube.com/watch?v=xwwAVRyNmgQ",
     }
   ];
   res.send(Songs);

@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Hindi Songs</h1>
+      <h1 className='Hero-Heading'>Hindi Songs</h1>
       <div className="song-list">
         {error ? (
           <p>{error}</p>
