@@ -6,7 +6,7 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('/api')
+    axios.get('/')
       .then((res) => {
         console.log(res.data);
         if (Array.isArray(res.data)) {
