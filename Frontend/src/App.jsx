@@ -1,41 +1,45 @@
 import React, { useEffect, useState } from 'react';
+import Skeleton from './components/Skeleton'; 
 
 function App() {
   const [songs, setSongs] = useState([]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
 
-    const api = import.meta.env.VITE_HINDI_SONG_API
+  const api = import.meta.env.VITE_HINDI_SONG_API;
 
   useEffect(() => {
     fetch(api)
       .then((response) => {
-        console.log('Response:', response);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.json();
       })
       .then((data) => {
-        console.log('Data:', data);
         if (Array.isArray(data)) {
           setSongs(data);
         } else {
-          console.error('Data is not an array:', data);
           setError('Data is not in the expected format');
         }
       })
       .catch((err) => {
-        console.error('Error fetching songs:', err);
         setError('Error fetching songs');
+      })
+      .finally(() => {
+        setLoading(false);
       });
-  }, []);
+  }, [api]);
+
 
   return (
     <div className="app">
-      <h1 className='Hero-Heading'>Hindi Songs</h1>
+      <h1 className="Hero-Heading">Hindi Songs</h1>
       <div className="song-list">
         {error ? (
           <p>{error}</p>
+        ) : loading ? (
+          [...Array(songs.length || 10)].map((_, index) => <Skeleton key={index} />)
         ) : (
           songs.map((song, index) => (
             <a key={song.id} href={song.link} target="_blank" rel="noopener noreferrer">

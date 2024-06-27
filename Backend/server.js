@@ -9,7 +9,7 @@ dotenv.config();
 const whitelistWebs = process.env.WHITE_LIST_WEB
 
 // Define your whitelist
-const whitelist = ['http://localhost:5173', whitelistWebs];
+const whitelist = [ whitelistWebs];
 
 // CORS options
 const corsOptions = {
